@@ -1,0 +1,7 @@
+.git
+.venv
+__pycache__
+static/uploads/*
+static/processed/*
+*.pyc
+.DS_Store
