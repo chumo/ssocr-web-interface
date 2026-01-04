@@ -6,11 +6,18 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libimlib2-dev \
     libx11-dev \
+    wget \
+    bzip2 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy ssocr source and build
-WORKDIR /build/ssocr
-COPY ssocr-2.25.1 .
+WORKDIR /build
+# Download and extract specific version
+RUN wget https://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.25.1.tar.bz2 \
+    && tar -xjf ssocr-2.25.1.tar.bz2 \
+    && rm ssocr-2.25.1.tar.bz2
+
+WORKDIR /build/ssocr-2.25.1
 RUN make ssocr
 
 # Runtime stage
@@ -29,7 +36,7 @@ WORKDIR /app
 RUN pip install flask requests sh
 
 # Copy ssocr binary from builder
-COPY --from=builder /build/ssocr/ssocr /app/ssocr
+COPY --from=builder /build/ssocr-2.25.1/ssocr /app/ssocr
 # Ensure it's executable
 RUN chmod +x /app/ssocr
 
