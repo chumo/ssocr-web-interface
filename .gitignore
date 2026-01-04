@@ -10,5 +10,7 @@ wheels/
 .venv
 
 ssocr*
-*/processed/*
-*/uploads/*
+static/processed/*
+!static/processed/.gitkeep
+static/uploads/*
+!static/uploads/.gitkeep
