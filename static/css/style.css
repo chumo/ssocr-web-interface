@@ -117,6 +117,12 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
 
+.auto-process-label {
+    font-size: 0.75rem;
+    /* Smaller font for this specific label */
+    margin-top: 2px;
+    /* Slight visual alignment tweak */
+}
 /* Main Content */
 .main-content {
     flex: 1;
