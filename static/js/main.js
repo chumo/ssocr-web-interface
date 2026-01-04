@@ -18,6 +18,9 @@ document.getElementById('threshold').addEventListener('input', (e) => {
 });
 document.getElementById('digits').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
 document.getElementById('invertColors').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
+document.getElementById('cmdGrayscale').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
+document.getElementById('cmdMakeMono').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
+document.getElementById('cmdRemoveIsolated').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
 document.getElementById('extraOptions').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
 document.getElementById('extraArgs').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
 document.getElementById('processBtn').addEventListener('click', processImage);
@@ -86,6 +89,9 @@ async function processImage() {
         threshold: parseInt(document.getElementById('threshold').value),
         digits: parseInt(document.getElementById('digits').value),
         invert: document.getElementById('invertColors').checked,
+        grayscale: document.getElementById('cmdGrayscale').checked,
+        make_mono: document.getElementById('cmdMakeMono').checked,
+        remove_isolated: document.getElementById('cmdRemoveIsolated').checked,
         extra_options: document.getElementById('extraOptions').value,
         extra_args: document.getElementById('extraArgs').value
     };

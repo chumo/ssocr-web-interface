@@ -57,6 +57,9 @@ def process():
     invert = data.get('invert', False)
     extra_options = data.get('extra_options', '')
     extra_args = data.get('extra_args', '')
+    grayscale = data.get('grayscale', True) # Default to True if not present (legacy safety)
+    make_mono = data.get('make_mono', True)
+    remove_isolated = data.get('remove_isolated', True)
 
 
     # Construct ssocr command
@@ -93,15 +96,16 @@ def process():
 
 
 
-    # User requested modifiers: grayscale make_mono remove_isolated
-    # Process only the cropped area
-    # User requested modifiers: grayscale make_mono remove_isolated
-    # Process only the cropped area
-    modifiers = ['grayscale', 'make_mono', 'remove_isolated']
+    # User requested modifiers: toggleable via UI
+    if grayscale:
+        cmd.append('grayscale')
+    if make_mono:
+        cmd.append('make_mono')
+    if remove_isolated:
+        cmd.append('remove_isolated')
 
     if invert:
-        modifiers.append('invert')
-    cmd.extend(modifiers)
+        cmd.append('invert')
 
     # Append user provided extra arguments safely
     if extra_args:
