@@ -1,0 +1,270 @@
+/* Global Styles */
+body {
+    background-color: #cccccc; /* Light Grey Main BG */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a421a; /* Dark Forest Green */
+    color: white;
+    padding: 10px 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: 0;
+    margin-left: 10px;
+}
+
+/* App Layout */
+.app-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background-color: #c9dec9; /* Sage Green */
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid #b0c0b0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #333;
+}
+
+.control-group {
+    background: transparent;
+}
+
+/* Form Elements Customization */
+.form-label {
+    color: #444;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 2px #e8be6b;
+}
+
+/* Mustard Button */
+.btn-mustard {
+    background-color: #e8be6b; /* Mustard / Ocher */
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+.btn-mustard:hover {
+    background-color: #dcb365;
+    transform: translateY(-1px);
+}
+
+.btn-mustard:active {
+    transform: translateY(0);
+}
+
+/* Custom Switches */
+.custom-switch .form-check-input {
+    width: 3em;
+    height: 1.5em;
+    background-color: #fff;
+    border: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(100, 100, 100, 0.5)'/%3e%3c/svg%3e");
+}
+
+.custom-switch .form-check-input:checked {
+    background-color: #e8be6b; /* Active color */
+    border-color: #e8be6b;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #cccccc;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.content-grid {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    min-height: 400px;
+}
+
+.loaded-image-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 300px;
+    height: 100%; /* Ensure it takes full height */
+}
+
+.results-column .panel-box {
+    flex: 1; /* Share height equally */
+    min-height: 0; /* Allow shrinking if needed */
+}
+
+.error-state {
+    background-color: #f8d7da !important; /* Pastel red */
+    color: #721c24 !important; /* Dark red text */
+}
+
+.error-text {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: normal !important;
+    word-break: break-word;
+}
+
+/* Panels */
+.panel-box {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.panel-header {
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.panel-body {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 10px;
+    flex: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+    position: relative;
+    min-height: 100px;
+}
+
+.loaded-image-panel .panel-body,
+.processed-image-panel .panel-body {
+    padding: 0;
+}
+
+/* Image Containers */
+#imageContainer {
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+}
+#mainImage {
+    max-width: 100%;
+}
+
+#processedImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Result Display */
+.result-display {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Command Panel */
+.command-panel {
+    height: auto;
+    flex: 0 0 auto;
+}
+.command-text {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #555;
+    word-break: break-all;
+}
+
+/* Cropper Customization */
+.cropper-view-box,
+.cropper-face {
+  border-radius: 0;
+  outline-color: #e8be6b;
+}
+.cropper-line, .cropper-point {
+    background-color: #e8be6b;
+}
+
+/* Range Slider */
+.custom-range::-webkit-slider-thumb {
+    background: #555;
+}
+
+.custom-range::-moz-range-thumb {
+    background: #555;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #c9dec9;
+}
+::-webkit-scrollbar-thumb {
+    background: #8fa88f;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #7a947a;
+}

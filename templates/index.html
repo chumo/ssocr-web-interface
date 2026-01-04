@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSOCR Web Interface</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Cropper.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" rel="stylesheet">
+    <!-- Google Fonts for retro/digital look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="main-header">
+    <div class="logo">SSOCR <span class="subtitle">web interface</span></div>
+</header>
+
+<div class="app-container">
+    <!-- Sidebar (Left) -->
+    <aside class="sidebar">
+        <!-- Auto Process Toggle -->
+        <div class="control-group">
+             <div class="form-check form-switch custom-switch">
+                <input class="form-check-input" type="checkbox" id="autoProcess" checked>
+                <label class="form-check-label fw-bold" for="autoProcess">AUTO PROCESS ON CHANGE</label>
+            </div>
+        </div>
+
+        <!-- Image URL -->
+        <div class="control-group">
+            <label for="imageUrl" class="form-label fw-bold">image URL</label>
+            <input type="text" id="imageUrl" class="form-control" placeholder="http://...">
+        </div>
+
+        <!-- Load Button -->
+        <div class="control-group">
+            <button class="btn btn-mustard w-100 fw-bold" type="button" id="loadImageBtn">load</button>
+        </div>
+
+        <!-- Digits & Invert Row -->
+        <div class="control-group d-flex justify-content-between align-items-start gap-2">
+            <div class="w-50">
+                <label for="digits" class="form-label fw-bold">digits</label>
+                <input type="number" class="form-control text-center" id="digits" value="-1">
+            </div>
+            <div class="w-50">
+                <label class="form-label fw-bold d-block">Invert<br>colors</label>
+                <div class="form-check form-switch custom-switch">
+                    <input class="form-check-input" type="checkbox" id="invertColors">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Threshold -->
+        <div class="control-group mt-3">
+            <label class="form-label fw-bold">Threshold</label>
+            <input type="range" class="form-range custom-range" id="threshold" min="-1" max="100" value="-1">
+            <div class="text-center fw-bold" id="thresholdVal">Auto</div>
+        </div>
+
+        <!-- Extra Options -->
+        <div class="control-group mt-3">
+            <label for="extraOptions" class="form-label fw-bold">Extra options</label>
+            <input type="text" id="extraOptions" class="form-control" placeholder="e.g. -T -f white">
+        </div>
+
+        <!-- Extra Args -->
+        <div class="control-group mt-3">
+            <label for="extraArgs" class="form-label fw-bold">Extra commands</label>
+            <input type="text" id="extraArgs" class="form-control" placeholder="e.g. erosion dilation">
+        </div>
+
+    </aside>
+
+    <!-- Main Content (Right) -->
+    <main class="main-content">
+        <div class="content-grid">
+            <!-- Loaded Image (Large, Left) -->
+            <div class="panel-box loaded-image-panel">
+                <div class="panel-header">LOADED IMAGE</div>
+                <div class="panel-body">
+                    <div id="imageContainer">
+                        <img id="mainImage" src="" style="display: none;">
+                    </div>
+                    <div id="placeholderText" class="text-muted text-center mt-5">No image loaded</div>
+                </div>
+            </div>
+
+            <!-- Right Column for Results -->
+            <div class="results-column">
+                <!-- Processed Image -->
+                <div class="panel-box processed-image-panel">
+                    <div class="panel-header">PROCESSED IMAGE</div>
+                    <div class="panel-body d-flex justify-content-center align-items-center">
+                        <img id="processedImage" src="" style="display: none;">
+                    </div>
+                </div>
+
+                <!-- Extracted Digits -->
+                <div class="panel-box extracted-digits-panel mt-3">
+                    <div class="panel-header">EXTRACTED DIGITS</div>
+                    <div id="resultsPanelBody" class="panel-body d-flex justify-content-center align-items-center">
+                         <div id="resultText" class="result-display"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SSOCR Command (Bottom) -->
+        <div class="panel-box command-panel mt-3">
+            <div class="panel-header">SSOCR COMMAND</div>
+            <div class="panel-body">
+                <div id="commandUsed" class="command-text"></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
