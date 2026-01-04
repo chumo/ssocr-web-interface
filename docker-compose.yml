@@ -2,7 +2,7 @@ services:
   web:
     build: .
     ports:
-      - "5000:5000"
+      - "5123:5123"
     volumes:
       - ./static/uploads:/app/static/uploads
       - ./static/processed:/app/static/processed
