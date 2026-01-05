@@ -2,6 +2,8 @@
 
 A web-based interface for **SSOCR** (Seven Segment Optical Character Recognition), allowing users to process images of seven-segment displays and extract digits.
 
+This webapp is very handy to stablish the correct parameters to use in the [Home Assistant's](https://www.home-assistant.io/integrations/seven_segments/) seven_segments built-in integration, which uses `ssocr` under the hood.
+
 For detailed documentation on the `ssocr` command and its options, refer to the [SSOCR project webpage](https://www.unix-ag.uni-kl.de/~auerswal/ssocr/).
 
 ## Features
