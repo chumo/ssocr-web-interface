@@ -24,7 +24,7 @@ You can run the application using Docker Compose.
     ```
 
 2.  **Access the App**:
-    Open your browser and navigate to: [http://localhost:5000](http://localhost:5000)
+    Open your browser and navigate to: [http://localhost:5123](http://localhost:5123)
 
 3.  **Stop**:
     Press `Ctrl+C` or run:
