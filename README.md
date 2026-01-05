@@ -2,6 +2,8 @@
 
 A web-based interface for **SSOCR** (Seven Segment Optical Character Recognition), allowing users to process images of seven-segment displays and extract digits.
 
+For detailed documentation on the `ssocr` command and its options, refer to the [SSOCR project webpage](https://www.unix-ag.uni-kl.de/~auerswal/ssocr/).
+
 ## Features
 - **Interactive UI**: Upload images or load from URL.
 - **Image Preprocessing**: Crop, threshold, and inverting.
