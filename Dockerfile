@@ -44,7 +44,7 @@ RUN chmod +x /app/ssocr
 COPY . /app
 
 # Expose port
-EXPOSE 5000
+EXPOSE 5123
 
 # Run application
 CMD ["python", "app.py"]
