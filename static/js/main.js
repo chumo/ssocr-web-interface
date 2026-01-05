@@ -10,25 +10,23 @@ const thresholdVal = document.getElementById('thresholdVal');
 
 let currentImagePath = null;
 
-document.getElementById('charset').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
+document.getElementById('charset').addEventListener('change', () => { processImage(); });
 document.getElementById('loadImageBtn').addEventListener('click', loadFromUrl);
 document.getElementById('threshold').addEventListener('input', (e) => {
     const val = e.target.value;
     thresholdVal.textContent = val == -1 ? 'Auto' : val + '%';
-    if(shouldAutoProcess()) processImage();
+    processImage();
 });
-document.getElementById('digits').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
-document.getElementById('invertColors').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
-document.getElementById('cmdGrayscale').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
-document.getElementById('cmdMakeMono').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
-document.getElementById('cmdRemoveIsolated').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
-document.getElementById('extraOptions').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
-document.getElementById('extraArgs').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
+document.getElementById('digits').addEventListener('change', () => { processImage(); });
+document.getElementById('invertColors').addEventListener('change', () => { processImage(); });
+document.getElementById('cmdGrayscale').addEventListener('change', () => { processImage(); });
+document.getElementById('cmdMakeMono').addEventListener('change', () => { processImage(); });
+document.getElementById('cmdRemoveIsolated').addEventListener('change', () => { processImage(); });
+document.getElementById('extraOptions').addEventListener('change', () => { processImage(); });
+document.getElementById('extraArgs').addEventListener('change', () => { processImage(); });
 // document.getElementById('processBtn').addEventListener('click', processImage);
 
-function shouldAutoProcess() {
-    return document.getElementById('autoProcess').checked && cropper;
-}
+
 
 
 
@@ -57,7 +55,7 @@ async function loadFromUrl() {
             autoCropArea: 0.8,
             zoomOnWheel: false,
             cropend: () => {
-                if(shouldAutoProcess()) processImage();
+                processImage();
             },
             ready: function() {
                 // Restore previous crop data if available
@@ -65,7 +63,7 @@ async function loadFromUrl() {
                     this.cropper.setData(lastCropData);
                 }
 
-                if(shouldAutoProcess()) processImage();
+                processImage();
             }
         });
 
