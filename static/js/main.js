@@ -24,7 +24,7 @@ document.getElementById('cmdMakeMono').addEventListener('change', () => { if (sh
 document.getElementById('cmdRemoveIsolated').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
 document.getElementById('extraOptions').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
 document.getElementById('extraArgs').addEventListener('change', () => { if(shouldAutoProcess()) processImage(); });
-document.getElementById('processBtn').addEventListener('click', processImage);
+// document.getElementById('processBtn').addEventListener('click', processImage);
 
 function shouldAutoProcess() {
     return document.getElementById('autoProcess').checked && cropper;
@@ -145,3 +145,10 @@ async function processImage() {
         processedImage.style.display = 'none';
     }
 }
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('imageUrl').value) {
+        loadFromUrl();
+    }
+});
