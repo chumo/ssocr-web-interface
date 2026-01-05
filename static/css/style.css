@@ -127,11 +127,11 @@ body {
 .switches-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 5px;
+    column-gap: 40px;
     /* more space now */
     row-gap: 8px;
     align-items: center;
-    padding-left: 28px;
+    padding-left: 40px;
     /* Balanced indent */
 }
 
