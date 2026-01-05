@@ -54,6 +54,7 @@ def process():
     # Options
     threshold = data.get('threshold', -1)
     digits = data.get('digits', -1)
+    charset = data.get('charset', 'full')
     invert = data.get('invert', False)
     extra_options = data.get('extra_options', '')
     extra_args = data.get('extra_args', '')
@@ -84,8 +85,9 @@ def process():
     if digits != -1:
         cmd.extend(['-d', str(digits)])
 
-    # User requested modifier: -c digits
-    cmd.extend(['-c', 'digits'])
+    # charset modifier
+    if charset and charset != 'full':
+        cmd.extend(['-c', charset])
 
     # Crop command
     if crop:
@@ -164,4 +166,4 @@ def process():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5123)
+    app.run(debug=True, host='0.0.0.0', port=5123)

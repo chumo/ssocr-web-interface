@@ -10,6 +10,7 @@ const thresholdVal = document.getElementById('thresholdVal');
 
 let currentImagePath = null;
 
+document.getElementById('charset').addEventListener('change', () => { if (shouldAutoProcess()) processImage(); });
 document.getElementById('loadImageBtn').addEventListener('click', loadFromUrl);
 document.getElementById('threshold').addEventListener('input', (e) => {
     const val = e.target.value;
@@ -88,6 +89,7 @@ async function processImage() {
         },
         threshold: parseInt(document.getElementById('threshold').value),
         digits: parseInt(document.getElementById('digits').value),
+        charset: document.getElementById('charset').value,
         invert: document.getElementById('invertColors').checked,
         grayscale: document.getElementById('cmdGrayscale').checked,
         make_mono: document.getElementById('cmdMakeMono').checked,
