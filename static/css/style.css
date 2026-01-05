@@ -21,6 +21,22 @@ body {
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 100;
+    position: relative;
+    }
+    
+    .github-link {
+        color: white;
+        position: absolute;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+    
+    .github-link:hover {
+        color: #e8be6b;
+        opacity: 1;
 }
 
 .logo {
