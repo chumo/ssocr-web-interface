@@ -17,6 +17,21 @@
 
 <!-- Header -->
 <header class="main-header">
+    <div id="donate-button-container">
+        <div id="donate-button"></div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+            PayPal.Donation.Button({
+                env: 'production',
+                hosted_button_id: 'QQWVR8SWWWC2E',
+                image: {
+                    src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif',
+                    alt: 'Donate with PayPal button',
+                    title: 'PayPal - The safer, easier way to pay online!',
+                }
+            }).render('#donate-button');
+        </script>
+    </div>
     <div class="logo"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="SSOCR Logo" style="height: 50px;"></div>
     <a href="https://github.com/chumo/ssocr-web-interface" target="_blank" class="github-link" aria-label="View on GitHub">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">

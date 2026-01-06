@@ -23,7 +23,7 @@ body {
     z-index: 100;
     position: relative;
     }
-    
+
     .github-link {
         color: white;
         position: absolute;
@@ -33,12 +33,19 @@ body {
         opacity: 0.8;
         transition: opacity 0.2s;
     }
-    
+
     .github-link:hover {
         color: #e8be6b;
         opacity: 1;
 }
 
+#donate-button-container {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 101;
+}
 .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
