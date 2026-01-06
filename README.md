@@ -1,6 +1,6 @@
 # SSOCR Web Interface
 
-A web-based interface for **SSOCR** (Seven Segment Optical Character Recognition), allowing users to process images of seven-segment displays and extract digits.
+A web-based interface for **SSOCR** (Seven Segment Optical Character Recognition), allowing users to process images of seven-segment displays and extract digits. The app is online at [https://ssocr-web-interface.onrender.com/](https://ssocr-web-interface.onrender.com/).
 
 This webapp is very handy to stablish the correct parameters to use in the [Home Assistant's](https://www.home-assistant.io/integrations/seven_segments/) seven_segments built-in integration, which uses `ssocr` under the hood.
 
